@@ -1,24 +1,11 @@
-# Sheikh Iqbal Ahamed public website
+# Sheikh Iqbal Ahamed — public website
 
-This directory contains the initial static front page for the GitHub Pages
-hosting milestone. `index.html` includes its own CSS and has no JavaScript,
-external fonts, analytics, package dependencies or build step. `.nojekyll`
-allows GitHub Pages to serve the files directly.
+The public academic portfolio is hosted on GitHub Pages at https://iqbalahamed.com/. The account address https://iqbalahamedus.github.io/ redirects to the custom domain.
 
-The page contains public professional information, links to the Ubicomp Lab and
-the four venture websites, and a public academic email link. It clearly states
-that the full academic portfolio is being prepared. The page is temporarily
-marked `noindex, follow`; remove the `noindex` directive when the full portfolio
-is ready for search indexing.
+This repository contains only the reviewed static website archive, its integrity manifest, the archive verifier, and the Pages deployment workflow. The workflow checks every file before extracting and publishing the website. It does not build or expose the private editor or its database.
 
-The private source, owner login, editing database and publishing backend will
-be configured separately. This public directory must never contain source CVs,
-private contact details, credentials, receipt files, database exports or raw
-research inventory. No backend, blog editor or CV-download functionality is
-implemented by this initial page.
+The site includes Dr. Ahamed's professional CV, research and publication records, teaching, mentorship, grants, service, ventures, Ubicomp Lab, and academic genealogy. The profile portrait comes from the Ubicomp Lab. The blog is ready for future articles; no articles have been invented.
 
-The public repository is `iqbalahamedus/iqbalahamedus.github.io`, serving
-`https://iqbalahamedus.github.io/`. The GitHub Actions workflow in
-`.github/workflows/pages.yml` publishes only `index.html` and `.nojekyll`.
-GitHub Pages settings and any future custom-domain DNS records are managed
-separately. No custom domain is embedded in this bootstrap.
+The original CV, private contact information, billing records, source code, credentials, and editable database do not belong in this public repository. Editing and publishing services are configured separately in Dr. Ahamed's own accounts.
+
+The custom domain and automatic HTTPS certificate are configured in GitHub Pages settings. DNS remains with the domain registrar.
