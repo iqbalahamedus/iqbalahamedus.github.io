@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sheikh Iqbal Ahamed, Ph.D. — Wehr Professor of Computer Science at Marquette University, Director of the Ubicomp Lab, and Founder and President of Ubitrix International.">
+  <meta name="theme-color" content="#101b2c">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://iqbalahamedus.github.io/">
+  <title>Sheikh Iqbal Ahamed, Ph.D. | Research, Teaching &amp; Ventures</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #101b2c;
+      --panel: #19293d;
+      --panel-deep: #142236;
+      --text: #f4f1e9;
+      --muted: #bcc6d1;
+      --gold: #d4b36c;
+      --line: #344458;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 1rem/1.65 var(--sans); }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:focus-visible { outline: 3px solid var(--gold); outline-offset: 6px; border-radius: 3px; }
+    a:hover { color: var(--gold); }
+    .wrap { width: min(1180px, calc(100% - 4rem)); margin-inline: auto; }
+    .skip { position: absolute; left: 1rem; top: -5rem; z-index: 10; padding: .7rem 1rem; background: var(--text); color: var(--bg); }
+    .skip:focus { top: 1rem; }
+    .masthead { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding-block: 2rem; }
+    .brand { display: flex; align-items: center; gap: .85rem; text-decoration: none; }
+    .brand-mark { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); font: 1.2rem var(--serif); }
+    .brand-name { font-size: .9rem; font-weight: 600; letter-spacing: .025em; }
+    nav { display: flex; gap: .3rem; padding: .3rem; border: 1px solid var(--line); border-radius: 100px; }
+    nav a { text-decoration: none; font-size: .84rem; padding: .5rem 1rem; border-radius: 100px; color: var(--muted); }
+    nav a:hover { background: var(--panel); color: var(--text); }
+    .hero { display: grid; grid-template-columns: 1.4fr .8fr; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; }
+    .hero-main { padding: clamp(2rem, 5vw, 4.5rem); }
+    .eyebrow { margin: 0 0 1.25rem; font-size: .72rem; line-height: 1.5; font-weight: 650; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); }
+    h1, h2, h3, p { overflow-wrap: break-word; }
+    h1 { max-width: 640px; margin: 0; font: 400 clamp(3rem, 6vw, 5.3rem)/1.04 var(--serif); letter-spacing: -.035em; }
+    h1 small { display: block; margin-top: 1.1rem; color: var(--muted); font: 400 1rem/1.5 var(--sans); letter-spacing: .03em; }
+    .role { margin: 1.8rem 0 0; font-size: 1.1rem; line-height: 1.6; }
+    .institution { display: block; color: var(--muted); font-size: .95rem; }
+    .intro { margin: 1.45rem 0 0; max-width: 37rem; color: var(--muted); font-size: 1.04rem; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 2rem; }
+    .button { display: inline-flex; gap: .8rem; align-items: center; justify-content: center; min-height: 48px; padding: .65rem 1.25rem; border-radius: 100px; background: var(--gold); color: var(--bg); font-size: .88rem; font-weight: 650; text-decoration: none; }
+    .button:hover { background: #e4c684; color: var(--bg); }
+    .text-link { font-size: .88rem; }
+    .hero-aside { display: flex; flex-direction: column; justify-content: space-between; gap: 2.5rem; padding: 2.8rem 2.3rem; background: var(--panel); border-left: 1px solid var(--line); }
+    .lab-symbol { display: grid; place-items: center; align-self: center; width: 170px; height: 170px; margin: .5rem 0; border: 1px solid #556072; border-radius: 50%; box-shadow: 0 0 0 16px #19293d, 0 0 0 17px #344458; }
+    .lab-symbol span { display: grid; place-items: center; width: 112px; height: 112px; border: 1px solid var(--gold); border-radius: 50%; font: 3.8rem var(--serif); color: var(--gold); }
+    .hero-aside h2 { margin: 0 0 1rem; font: 400 2.2rem/1.15 var(--serif); letter-spacing: -.02em; }
+    .hero-aside p:not(.eyebrow) { margin: 0 0 1rem; color: var(--muted); font-size: .91rem; }
+    .hero-aside a { font-size: .9rem; color: var(--gold); }
+    .section { padding-top: 4rem; }
+    .section-head { display: flex; align-items: baseline; gap: 2rem; justify-content: space-between; margin-bottom: 1.5rem; }
+    .section-head h2 { margin: 0; font: 400 clamp(2rem, 3vw, 2.7rem)/1.2 var(--serif); letter-spacing: -.025em; }
+    .section-head p { max-width: 31rem; margin: 0; color: var(--muted); font-size: .92rem; }
+    .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--panel-deep); }
+    .research-item { padding: 1.8rem; }
+    .research-item + .research-item { border-left: 1px solid var(--line); }
+    .number { color: var(--gold); font: italic 1.05rem var(--serif); }
+    .research-item h3 { margin: .9rem 0 .65rem; font: 400 1.4rem/1.25 var(--serif); }
+    .research-item p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .ventures { border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+    .venture { display: grid; grid-template-columns: 1fr 1.8fr auto; gap: 2rem; align-items: center; padding: 1.5rem 1.8rem; text-decoration: none; background: var(--panel-deep); }
+    .venture + .venture { border-top: 1px solid var(--line); }
+    .venture:hover { background: var(--panel); }
+    .venture-name { font: 400 1.45rem/1.2 var(--serif); color: var(--text); }
+    .venture-desc { color: var(--muted); font-size: .9rem; }
+    .arrow { color: var(--gold); font-size: 1.3rem; }
+    .contact { display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin-top: 4rem; padding: 2.4rem 2.7rem; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+    .contact h2 { margin: 0 0 .65rem; font: 400 2rem/1.2 var(--serif); }
+    .contact p { margin: 0; color: var(--muted); font-size: .92rem; max-width: 34rem; }
+    .contact a { flex-shrink: 0; }
+    .status { margin: 2.5rem 0 0; padding: 1.2rem 0; border-top: 1px solid var(--line); display: flex; gap: 1rem; align-items: baseline; font-size: .82rem; color: var(--muted); }
+    .status strong { font-weight: 600; color: var(--gold); white-space: nowrap; }
+    footer { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0 2rem; color: var(--muted); font-size: .75rem; }
+    @media (max-width: 850px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-aside { display: grid; grid-template-columns: 150px 1fr; align-items: center; border-left: 0; border-top: 1px solid var(--line); padding: 2.4rem; }
+      .lab-symbol { width: 118px; height: 118px; margin: 1rem; }
+      .lab-symbol span { width: 80px; height: 80px; font-size: 2.8rem; }
+      .research-grid { grid-template-columns: 1fr; }
+      .research-item + .research-item { border-left: 0; border-top: 1px solid var(--line); }
+      .section-head { display: block; }
+      .section-head p { margin-top: .9rem; }
+      .contact { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: calc(100% - 2rem); }
+      .masthead { flex-direction: column; align-items: flex-start; padding-block: 1.2rem; gap: 1rem; }
+      nav { width: 100%; justify-content: space-around; }
+      nav a { padding-inline: .9rem; }
+      .hero { border-radius: 20px; }
+      .hero-main { padding: 2rem 1.5rem; }
+      .hero-aside { display: block; padding: 1.8rem 1.5rem; }
+      .lab-symbol { display: none; }
+      .hero-aside h2 { font-size: 1.8rem; }
+      .section { padding-top: 2.8rem; }
+      .venture { grid-template-columns: 1fr auto; gap: .5rem 1rem; padding: 1.4rem; }
+      .venture-desc { grid-column: 1; grid-row: 2; }
+      .arrow { grid-column: 2; grid-row: 1 / 3; }
+      .contact { margin-top: 2.8rem; padding: 1.5rem; }
+      .status, footer { flex-direction: column; gap: .45rem; }
+      .status strong { white-space: normal; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <header class="masthead">
+      <a class="brand" href="#main" aria-label="Sheikh Iqbal Ahamed, home">
+        <span class="brand-mark" aria-hidden="true">IA</span>
+        <span class="brand-name">Sheikh Iqbal Ahamed</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#research">Research</a>
+        <a href="#ventures">Ventures</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="profile-title">
+        <div class="hero-main">
+          <p class="eyebrow">Computing · Health · Human experience</p>
+          <h1 id="profile-title">Sheikh Iqbal<br>Ahamed<small>Ph.D.</small></h1>
+          <p class="role">Wehr Professor of Computer Science<span class="institution">Marquette University · Milwaukee, Wisconsin</span></p>
+          <p class="intro">My research explores how mobile, wearable and ubiquitous computing can support human health—from sensing and machine learning to systems designed around the people who use them.</p>
+          <div class="actions">
+            <a class="button" href="https://ubicomp.cs.mu.edu/">Explore the Ubicomp Lab <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="mailto:sheikh.ahamed@marquette.edu">Get in touch</a>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="Research leadership">
+          <div class="lab-symbol" aria-hidden="true"><span>U</span></div>
+          <div>
+            <p class="eyebrow">Research leadership</p>
+            <h2>Ubicomp<br>Research Lab</h2>
+            <p>As Director of the Ubicomp Lab, I work with students and collaborators on mobile, wearable and ambient technologies for health.</p>
+            <a href="https://ubicomp.cs.mu.edu/">Meet the lab <span aria-hidden="true">↗</span></a>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="research" aria-labelledby="research-title">
+        <div class="section-head">
+          <h2 id="research-title">Research interests</h2>
+          <p>Connecting methods in computer science with questions in health, accessibility and everyday life.</p>
+        </div>
+        <div class="research-grid">
+          <article class="research-item">
+            <span class="number" aria-hidden="true">01</span>
+            <h3>Digital health &amp; sensing</h3>
+            <p>Mobile health, non-invasive physiological sensing, wearable computing and remote monitoring.</p>
+          </article>
+          <article class="research-item">
+            <span class="number" aria-hidden="true">02</span>
+            <h3>AI for healthcare</h3>
+            <p>Machine learning and data analysis for health research, with attention to the contexts in which these systems are used.</p>
+          </article>
+          <article class="research-item">
+            <span class="number" aria-hidden="true">03</span>
+            <h3>Human-centered systems</h3>
+            <p>Human-computer interaction, rehabilitation and assistive technologies, security, privacy and trust.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="ventures" aria-labelledby="ventures-title">
+        <div class="section-head">
+          <h2 id="ventures-title">From research to practice</h2>
+          <p>Founder and President of Ubitrix International, whose ventures bring research into compliance technology and health sensing.</p>
+        </div>
+        <div class="ventures">
+          <a class="venture" href="https://ubitrix.com/">
+            <span class="venture-name">Ubitrix International</span>
+            <span class="venture-desc">Technology and research translation</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="venture" href="https://ubivital.com/">
+            <span class="venture-name">UbiVital</span>
+            <span class="venture-desc">Research-based, non-invasive health sensing</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="venture" href="https://ubicomply.ai/">
+            <span class="venture-name">UbiComply</span>
+            <span class="venture-desc">Compliance automation and evidence management</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="venture" href="https://ubiring.fit/">
+            <span class="venture-name">UbiRing</span>
+            <span class="venture-desc">Wearable technology for wellness insights</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div>
+          <h2 id="contact-title">Start a conversation</h2>
+          <p>For research collaborations, academic inquiries and questions about my work, reach me at Marquette University.</p>
+        </div>
+        <a class="button" href="mailto:sheikh.ahamed@marquette.edu">Email Dr. Ahamed <span aria-hidden="true">↗</span></a>
+      </section>
+      <div class="status" role="note">
+        <strong>The portfolio is expanding.</strong>
+        <span>Publications, teaching, academic genealogy, CV downloads and a blog are being prepared for this website.</span>
+      </div>
+    </main>
+    <footer>
+      <span>© 2026 Sheikh Iqbal Ahamed</span>
+      <span>Personal academic website</span>
+    </footer>
+  </div>
+</body>
+</html>
