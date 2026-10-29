@@ -1,4 +1,4 @@
-name: Publish website
+name: Deploy verified portfolio to GitHub Pages
 
 on:
   push:
@@ -9,38 +9,38 @@ permissions:
   contents: read
 
 concurrency:
-  group: github-pages
+  group: iqbal-github-pages
   cancel-in-progress: false
 
 jobs:
+  build:
+    if: github.repository == 'iqbalahamedus/iqbalahamedus.github.io' && github.repository_id == '1438955345' && github.repository_owner_id == '349979410' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Read the exact public release commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - name: Verify public files before extraction
+        run: python3 -I verify_public_site.py
+      - name: Upload verified static website
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+          retention-days: 1
   deploy:
-    if: github.repository == 'iqbalahamedus/iqbalahamedus.github.io' && github.ref == 'refs/heads/main'
+    needs: build
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Check out public website
-        uses: actions/checkout@v7
-        with:
-          persist-credentials: false
-      - name: Configure Pages
-        uses: actions/configure-pages@v6
-      - name: Prepare public files
-        run: |
-          mkdir -p _site
-          cp index.html .nojekyll _site/
-          test -s _site/index.html
-      - name: Upload website
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: _site
-          include-hidden-files: true
-      - name: Deploy to GitHub Pages
+      - name: Publish the verified website
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
