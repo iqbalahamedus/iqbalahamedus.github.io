@@ -27,7 +27,7 @@ ORIGIN = "https://iqbalahamedus.github.io"
 LIVE_ORIGIN = "https://iqbalahamedus.github.io"
 OWNER_URL = ""
 PRODUCTION_ROBOTS = "User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api\nSitemap: https://iqbalahamedus.github.io/sitemap.xml\n"
-INDEXNOW_KEY = ""
+INDEXNOW_KEY = "ec1817b868f9301bf5f2404d80f94ccc"
 MAX_ARCHIVE_BYTES = 32 * 1024 * 1024
 MAX_MANIFEST_BYTES = 2 * 1024 * 1024
 MAX_TOTAL_BYTES = 128 * 1024 * 1024
@@ -354,6 +354,11 @@ def verify_archive(archive_bytes: bytes, manifest_bytes: bytes) -> dict[str, byt
         raise
     except (zipfile.BadZipFile, RuntimeError, NotImplementedError, EOFError, OSError, ValueError):
         raise Rejected("invalid-archive") from None
+    # Enabling IndexNow is complete only when the exact public key file exists.
+    # A verifier-only maintenance commit with the old ZIP intentionally fails
+    # before extraction/deployment; the last successful Pages release stays live.
+    if production and manifest["origin"] == "https://iqbalahamed.com":
+        require(verified.get("indexnow-verification.txt") == INDEXNOW_KEY.encode("ascii"), "indexnow-key-required")
     indexable = production_indexable(verified) if production else None
     for path, data in verified.items():
         audit_content(path, data, expected, production, indexable, verified)
